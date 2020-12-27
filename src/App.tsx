@@ -1,6 +1,8 @@
 import { h } from 'preact';
-import { useState, useEffect } from 'preact/hooks';
 import './App.css';
+import Bubble from './Bubble';
+
+const bubbles = 200;
 
 const App = () => {
   return (
@@ -13,6 +15,9 @@ const App = () => {
             </h2>
           </div>
         </div>
+        {Array.from(Array(bubbles).keys()).map(() => (
+          <Bubble />
+        ))}
       </section>
     </div>
   );
