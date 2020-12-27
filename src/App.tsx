@@ -1,6 +1,7 @@
 import { h } from 'preact';
 import './App.css';
 import Bubble from './Bubble';
+import Title from './Title';
 
 const bubbles = 200;
 
@@ -10,9 +11,7 @@ const App = () => {
       <section>
         <div class="box">
           <div class="circle">
-            <h2>
-              Happy <br /> Christmas
-            </h2>
+            <Title />
           </div>
         </div>
         {Array.from(Array(bubbles).keys()).map(() => (
