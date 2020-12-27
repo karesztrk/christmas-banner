@@ -1,3 +1,53 @@
+<template>
+  <div class="App">
+    <section>
+      <div class="box">
+        <div class="circle">
+          <Title />
+        </div>
+      </div>
+      <Bubble v-for="bubble in state.bubbles" />
+    </section>
+  </div>
+</template>
+
+<script lang="ts">
+import { defineComponent, reactive } from 'vue';
+import Bubble from './components/Bubble.vue';
+import Title from './components/Title.vue';
+interface State {
+  message: string;
+}
+export default defineComponent({
+  components: {
+    Bubble,
+    Title,
+  },
+  setup() {
+    const state = reactive({
+      bubbles: 200,
+    });
+    return {
+      state,
+    };
+  },
+});
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Satisfy', cursive;
+}
+
+body {
+  overflow: hidden;
+}
+
 .App section {
   display: flex;
   justify-content: center;
@@ -84,3 +134,4 @@
     opacity: 0;
   }
 }
+</style>
